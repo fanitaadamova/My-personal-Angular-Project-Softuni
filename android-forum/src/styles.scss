@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*
+*Removes all default whitespace
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*
+*Reset CSS model sizing calculations
+*/
+
+
+/*  *Global styles  */
+/*  *Global styles  */
+body {
+    max-width: 1466px;
+    margin: auto;
+    position: relative;
+    min-height: 100vh;
+}
+
+/*
+*Handle Responsivess
+*/
+
+/*
+*Handle Responsivess
+*/
+
+@media (min-width: 800px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1280px) {
+    html {
+        font-size: 18px;
+    }
+}
