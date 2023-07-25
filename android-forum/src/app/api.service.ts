@@ -11,19 +11,19 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getTheme(id: string) {
-    const { appUrl } = environment
-    return this.http.get<Theme>(`${appUrl}/themes/${id}`);
+    const { apiUrl } = environment
+    return this.http.get<Theme>(`${apiUrl}/themes/${id}`);
   }
   
   getThemes() {
-    const { appUrl } = environment
-    return this.http.get<Theme[]>(`${appUrl}/themes`);
+    const { apiUrl } = environment
+    return this.http.get<Theme[]>(`${apiUrl}/themes`);
   }
 
   getLastThemes(limit?: number) {
-    const { appUrl } = environment
+    const { apiUrl } = environment
     const limitCount = limit ? `?limit=${limit}` : '';
-    return this.http.get<Theme[]>(`${appUrl}/themes${limitCount}`);
+    return this.http.get<Theme[]>(`${apiUrl}/themes${limitCount}`);
   }
  
   addNewTheme(){

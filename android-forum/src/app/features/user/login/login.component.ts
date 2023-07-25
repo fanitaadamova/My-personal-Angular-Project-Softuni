@@ -15,8 +15,8 @@ import { ALLOWED_DOMAINS_FOR_EMAIL } from '../constants';
 export class LoginComponent implements OnInit, OnDestroy {
   appEmailDomains = ALLOWED_DOMAINS_FOR_EMAIL;
   subscription!: Subscription;
-  isLoading: boolean = false;
-
+  errMessage!: string;
+  
 
   constructor(
     private titlePage: Title,
@@ -29,17 +29,16 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login(form: NgForm): void {
     if (form.invalid) {
-      
       return;
     }
-    console.log("Login");
-    console.log(form.value);
-    
-    this.isLoading = true;
+    const { email, password } = form.value;
 
-    this.userService.login();
-    form.reset();
-    this.router.navigate(["/"]);
+    this.subscription = this.userService.login(email, password).subscribe({
+      next: () => {
+        this.router.navigate(["/"]);
+      },
+      error: (err) => this.errMessage = err.error.message
+    });
   }
 
 

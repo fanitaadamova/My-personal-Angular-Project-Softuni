@@ -11,14 +11,14 @@ import { ALLOWED_DOMAINS_FOR_EMAIL } from '../constants';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
- 
+
 })
 
 export class RegisterComponent implements OnInit, OnDestroy {
- 
+
   appEmailDomains = ALLOWED_DOMAINS_FOR_EMAIL;
   subscription!: Subscription;
-  isLoading: boolean = false;
+  errMessage!: string;
 
   constructor(
     private titlePage: Title,
@@ -30,22 +30,22 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   register(form: NgForm): void {
-    console.log(form);
-    
+
     if (form.invalid) {
-      console.log(form);
-      
       return;
     }
-    console.log("Register");
-    console.log(form.value);
+
+    const { username, email, password, rePassword } = form.value;
+
+    this.subscription = this.userService
+    .register(username, email, password, rePassword)
+    .subscribe( {
+      next: () => {
+        this.router.navigate(["/"]);
+      },
+      error: (err) => this.errMessage = err.error.message
+    });
     
-    this.isLoading = true;
-
-    this.userService.register();
-    form.reset();
-    this.router.navigate(["/"]);
-
   }
 
   ngOnDestroy(): void {

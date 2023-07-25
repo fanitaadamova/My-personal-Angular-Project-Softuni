@@ -10,14 +10,14 @@ import { UserModule } from './features/user/user.module';
 import { ThemeModule } from './theme/theme.module';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './features/not-found/not-found.component';
+import { cookieInterceptorProvider } from './core/cookie.interceptor';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent,
-  
+    NotFoundComponent,  
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { NotFoundComponent } from './features/not-found/not-found.component';
     ThemeModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [cookieInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
