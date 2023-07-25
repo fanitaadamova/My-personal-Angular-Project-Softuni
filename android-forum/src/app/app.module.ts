@@ -7,7 +7,7 @@ import { HomeComponent } from './features/home/home.component';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from './features/user/user.module';
-import { ThemeModule } from './theme/theme.module';
+import { ThemeModule } from './features/themes/theme.module';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './features/not-found/not-found.component';
 import { cookieInterceptorProvider } from './core/cookie.interceptor';
