@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
 export class ThemeAddComponent implements OnInit, OnDestroy {
   theme: Theme | undefined;
   subscription!: Subscription;
-  isLoading: boolean = false;
+  errMessage!: string;
 
   constructor(
     private titlePage: Title,
@@ -25,22 +25,23 @@ export class ThemeAddComponent implements OnInit, OnDestroy {
     this.titlePage.setTitle('Create theme page');
   }
 
-  //My desicion
-  // ngOnChanges(changes: SimpleChanges): void {   
-  // }
-
   addNewTheme(form: NgForm): void {
     if (form.invalid) {
-      console.log(form.value);
       return;     
     }
 
     console.log(form.value);
-    this.isLoading = true;
-    //да създам нов метод, с който ще правя POST заявка за добавяне на нова тема
-    this.apiService.addNewTheme();
-    form.reset();
-    this.router.navigate(["/themes"]);
+    const {themeName, postText } = form.value;
+    console.log(themeName, postText);
+    
+    //this.isLoading = true;
+    
+   this.subscription = this.apiService.addNewTheme(themeName, postText).subscribe({
+    next: () => {
+      this.router.navigate(["/themes"]);
+    },
+    error: (err) => this.errMessage = err.error.message
+    })
   }
 
 

@@ -5,7 +5,7 @@
         <div class="theme-title">
             <div class="theme-name-wrapper">
                 <div class="theme-name">
-                    <h2 class="mb-1 text-gray-900  text-xl mb-1 dark:text-neutral-300 font-bold">{{theme.themeName}}</h2>
+                    <h2 class="mb-1 text-gray-900  text-xl dark:text-neutral-300 font-bold">{{theme.themeName}}</h2>
                     <p>Date: <time>{{theme.created_at}}</time></p>
                 </div>
                 <div class="subscribers">
@@ -39,19 +39,37 @@
         <div class="answer-comment" *ngIf="isLogged">
             <p><span>Current User</span> comment:</p>
             <div class="answer">
-                <form>
-                    <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
+                <form #form="ngForm" (ngSubmit)="postComment(form)">
+                    <textarea name="postText" id="comment" #inputPost="ngModel" ngModel required cols="20"
+                        rows="8"></textarea>
 
-                    <button
-                        class="mb-6 inline-block  rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
-                        data-te-ripple-init data-te-ripple-color="light"
-                        style="background: linear-gradient(to right, #4de3d2, #269b72, #212121);">
-                        Post
-                    </button>
+                    <!--Error Title Container-->
+                    <ng-container *ngIf="inputPost.touched">
+                        <p class="error" *ngIf="inputPost.errors?.['required']">
+                            Comment field is required!
+                        </p>
+                    </ng-container>
+
+                    <div>
+                        <button [disabled]="form.invalid"
+                            class="mb-6 inline-block  rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                            data-te-ripple-init data-te-ripple-color="light"
+                            style="background: linear-gradient(to right, #4de3d2, #269b72, #212121);">
+                            Post Comment
+                        </button>
+                    </div>
+                    <!-- SERVER ERROR - back-end error -->
+                    <div class="text-center block mb-2 text-sm font-medium text-red-500  dark:text-white"
+                        *ngIf="errMessage">{{ errMessage }} <i class="fa-solid fa-xmark"></i>
+                    </div>
 
                 </form>
             </div>
         </div>
 
+    </div>
+
+    <div class="theme-content" *ngIf="!theme">
+        <p>There is no theme!</p>
     </div>
 </div>

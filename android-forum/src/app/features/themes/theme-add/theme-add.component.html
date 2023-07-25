@@ -1,12 +1,14 @@
 <section>
 
+ <!--
+
+   <div *ngIf="isLoading">
+     <app-loader />
+   </div>
+ -->
 
 
-<div *ngIf="isLoading">
-  <app-loader />
-</div>
-
-<div *ngIf="!isLoading"
+<div 
   class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
   <h2 class="mb-4 text-2xl font-bold">
     New Theme
@@ -24,13 +26,13 @@
       focus:invalid:border-red-500 focus:invalid:ring-red-500"
         placeholder="Title *" 
         type="text" 
-        name="title" 
-        id="title" 
-        #inputTitle="ngModel" 
+        name="themeName" 
+        id="themeName" 
+        #inputName="ngModel" 
         ngModel 
         required
         minlength="4" />
-      <label for="title"
+      <label for="themeName"
         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] 
         text-neutral-500  transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] 
         peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
@@ -39,11 +41,11 @@
       </label>
 
       <!--Error Title Container-->
-      <ng-container *ngIf="inputTitle.touched">
-        <p class="error" *ngIf="inputTitle.errors?.['required']">
+      <ng-container *ngIf="inputName.touched">
+        <p class="error" *ngIf="inputName.errors?.['required']">
           Title is required!
         </p>
-        <p class="error" *ngIf="inputTitle.errors?.['minlength']">
+        <p class="error" *ngIf="inputName.errors?.['minlength']">
           Title must be at least 4 characters!
         </p>
       </ng-container>
@@ -61,15 +63,15 @@
       focus:invalid:border-red-500 focus:invalid:ring-red-500"
          placeholder="Post *" 
          type="text" 
-         name="post" 
-         id="post" 
-         #inputPost="ngModel" 
+         name="postText" 
+         id="postText" 
+         #textAreaInput="ngModel" 
          ngModel 
          required
          minlength="10"
         
         rows="10"></textarea>
-      <label for="post" 
+      <label for="postText" 
       class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] 
         text-neutral-500  transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] 
         peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
@@ -77,11 +79,11 @@
         dark:text-neutral-200 dark:peer-focus:text-primary">
       </label>
       <!--Error Title Container-->
-  <ng-container *ngIf="inputPost.touched">
-   <p class="error" *ngIf="inputPost.errors?.['required']">
+  <ng-container *ngIf="textAreaInput.touched">
+   <p class="error" *ngIf="textAreaInput.errors?.['required']">
      Post is required!
    </p>
-   <p class="error" *ngIf="inputPost.errors?.['minlength']">
+   <p class="error" *ngIf="textAreaInput.errors?.['minlength']">
      Post must be at least 10 characters!
    </p>
   </ng-container>
@@ -97,6 +99,11 @@
         style="background: linear-gradient(to right, #36b5d8, #36dda3, #100f10);">
         Post theme
       </button>
+
+           <!-- SERVER ERROR - back-end error -->
+           <div class="text-center block mb-2 text-sm font-medium text-red-500  dark:text-white"
+           *ngIf="errMessage">{{ errMessage }} <i class="fa-solid fa-xmark"></i>
+         </div>
 
     </div>
   </form>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Theme } from './types/theme';
+import { Post } from './types/post';
 
 @Injectable({
   providedIn: 'root'
@@ -11,26 +12,32 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getTheme(id: string) {
-    const { apiUrl } = environment
+    const { apiUrl } = environment;
     return this.http.get<Theme>(`${apiUrl}/themes/${id}`);
   }
   
   getThemes() {
-    const { apiUrl } = environment
+    const { apiUrl } = environment;
     return this.http.get<Theme[]>(`${apiUrl}/themes`);
   }
 
   getLastThemes(limit?: number) {
-    const { apiUrl } = environment
+    const { apiUrl } = environment;
     const limitCount = limit ? `?limit=${limit}` : '';
     return this.http.get<Theme[]>(`${apiUrl}/themes${limitCount}`);
   }
  
-  addNewTheme(){
-    //TODO: implement post request
+  addNewTheme(themeName:string, postText:string){
+    return this.http.post<Theme>('/api/themes', {themeName, postText})
+    
   }
 
 
+  postComment( postText:string, themeId: string){
+ ///themes/:themeId
+    return this.http.post<Post>(`/api/themes/${themeId}`, { postText})
+    
+  }
 }
 
 
