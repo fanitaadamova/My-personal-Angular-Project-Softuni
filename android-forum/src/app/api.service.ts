@@ -28,15 +28,30 @@ export class ApiService {
   }
  
   addNewTheme(themeName:string, postText:string){
-    return this.http.post<Theme>('/api/themes', {themeName, postText})
-    
+    return this.http.post<Theme>('/api/themes', {themeName, postText})  
+  }
+
+  postComment( postText:string, themeId: string){
+    return this.http.post<Post>(`/api/themes/${themeId}`, { postText})   
   }
 
 
-  postComment( postText:string, themeId: string){
- ///themes/:themeId
-    return this.http.post<Post>(`/api/themes/${themeId}`, { postText})
-    
+  likePost(postId: string){
+     return this.http.put<Post>(`/api/likes/${postId}`, {})
+  }
+
+  editPost(){
+    //Only for Owner
+    //TODO:
+    //PUT REQUEST
+    ///themes/:themeId/posts/:postId
+  }
+
+  deletePost(){
+    //Only for Owner
+    //TODO:
+    //DELETE REQUEST
+    ///themes/:themeId/posts/:postId
   }
 }
 

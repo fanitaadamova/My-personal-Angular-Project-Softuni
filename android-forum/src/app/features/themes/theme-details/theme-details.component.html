@@ -30,8 +30,10 @@
                 </div>
             </div>
             <div class="footer">
-                <!-- <i class="fas fa-thumbs-up"></i>
-                <i class="fas fa-thumbs-down"></i> -->
+                <link *ngIf="isLogged" rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <i class="fa fa-thumbs-up" *ngIf="!post.likes.includes(userId)" (click)="likePost(post._id)"></i>
+                <i class="fa fa-thumbs-down" *ngIf="post.likes.includes(userId)"></i>
                 <p><span>{{post.likes.length}}</span> likes</p>
             </div>
         </div>

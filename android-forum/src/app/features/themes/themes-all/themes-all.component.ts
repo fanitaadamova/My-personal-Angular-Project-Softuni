@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 
 import { Theme } from 'src/app/types/theme';
@@ -11,9 +12,11 @@ import { Theme } from 'src/app/types/theme';
 })
 
 
-export class ThemesAllComponent implements OnInit {
+export class ThemesAllComponent implements OnInit, OnDestroy {
   themesList: Theme[] = [];
   isLoading: boolean = true;
+  subscription!: Subscription;
+  errMessage!: string;
 
   constructor(
     private titlePage: Title,
@@ -23,18 +26,22 @@ export class ThemesAllComponent implements OnInit {
 
   ngOnInit(): void {
     this.titlePage.setTitle('Themes page');
-    
-    this.apiService.getThemes().subscribe({
+
+    this.subscription = this.apiService.getThemes().subscribe({
       next: (themes) => {
         this.themesList = themes;
         this.isLoading = false;
       },
       error: (err) => {
-        this.isLoading = false;
-        console.log(`Error: ${err}`);
+       this.errMessage = err.error.message
       },
     });
   }
 
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
 }

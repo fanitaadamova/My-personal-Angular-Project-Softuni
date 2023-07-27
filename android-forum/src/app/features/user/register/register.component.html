@@ -30,7 +30,7 @@
                     disabled:shadow-none
                     invalid:border-white-500 invalid:text-red-600
                     focus:invalid:border-red-500 focus:invalid:ring-red-500" type="username" name="username"
-                      id="username" placeholder="username" #inputUsername="ngModel" ngModel required minlength="4" />
+                      id="username" placeholder="username" #inputUsername="ngModel" ngModel required minlength="5" />
                     <label for="exampleFormControlInput1"
                       class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">
                     </label>
@@ -40,7 +40,7 @@
                         Username is required!
                       </p>
                       <p class="error" *ngIf="inputUsername.errors?.['minlength']">
-                        Username must be at least 4 characters!
+                        Username must be at least 5 characters!
                       </p>
 
                     </ng-container>
