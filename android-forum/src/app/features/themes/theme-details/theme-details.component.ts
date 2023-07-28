@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 import { UserService } from 'src/app/features/user/user.serves';
 import { Post } from 'src/app/types/post';
 import { Theme } from 'src/app/types/theme';
+
 
 @Component({
   selector: 'app-theme-details',
@@ -18,24 +19,29 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
   theme: Theme | undefined;
   canLike$!: Observable<number>;
   likes$!: Observable<number>;
-  userId!: string;
   post: Post | undefined;
   subscribe$!: Subscription;
-  isOwner!: boolean;
+ // isEditMode = false;
   errMessage!: string;
+  currentPostText!: string;
+
 
   constructor(
     private titlePage: Title,
     private apiService: ApiService,
     private userService: UserService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.titlePage.setTitle('Theme details page');
     this.getThemeWithDetails();
-    this.userId = this.userService.user?._id as string
+
   }
 
+  get userId(): string {
+    return this.userService.user?._id || '';
+  }
 
   get isLogged(): boolean {
     return this.userService.isLogged;
@@ -50,12 +56,53 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
     })
   }
 
+  /*
+  editPost(postId: string, postText: string): void { 
+    this.isEditMode = true;
+    this.currentPostText = postText;   
+    console.log(postText);
+  }
+  */
+
+
+  saveComment(form: NgForm){
+    form.setValue(
+      {
+         
+        postText: this.currentPostText
+      }
+
+    )
+
+  }
+
+
+  deletePost(postId: string): void {
+    const themeId = this.activatedRoute.snapshot.params['themeId'];
+  
+    this.subscribe$ = this.apiService.deletePost(themeId, postId).subscribe({
+      next: () => {
+        console.log("succesfully deleted post");
+
+        this.getThemeWithDetails();
+      },
+      error: (err) => this.errMessage = err.error.message
+    })
+
+  }
+
 
   getThemeWithDetails(): void {
     const themeId = this.activatedRoute.snapshot.params['themeId'];
-    this.subscribe$ = this.apiService.getTheme(themeId).subscribe((theme) => {
-      this.theme = theme;
-      console.log({ theme });
+
+    this.subscribe$ = this.apiService.getTheme(themeId).subscribe({
+      next: (theme) => {
+        this.theme = theme;
+        console.log({ theme });
+      },
+      error: (err) => {
+        this.router.navigate(["**"]);
+      }
     })
   }
 

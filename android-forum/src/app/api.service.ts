@@ -15,7 +15,7 @@ export class ApiService {
     const { apiUrl } = environment;
     return this.http.get<Theme>(`${apiUrl}/themes/${id}`);
   }
-  
+
   getThemes() {
     const { apiUrl } = environment;
     return this.http.get<Theme[]>(`${apiUrl}/themes`);
@@ -26,32 +26,31 @@ export class ApiService {
     const limitCount = limit ? `?limit=${limit}` : '';
     return this.http.get<Theme[]>(`${apiUrl}/themes${limitCount}`);
   }
- 
-  addNewTheme(themeName:string, postText:string){
-    return this.http.post<Theme>('/api/themes', {themeName, postText})  
+
+  addNewTheme(themeName: string, postText: string) {
+    return this.http.post<Theme>('/api/themes', { themeName, postText })
   }
 
-  postComment( postText:string, themeId: string){
-    return this.http.post<Post>(`/api/themes/${themeId}`, { postText})   
+//Chech if it work - set back-en method
+  getPost(postId: string) {
+    return this.http.get<Post>(`/api/posts/${postId}`);
+  }
+
+  postComment(postText: string, themeId: string) {
+    return this.http.post<Post>(`/api/themes/${themeId}`, { postText })
   }
 
 
-  likePost(postId: string){
-     return this.http.put<Post>(`/api/likes/${postId}`, {})
+  likePost(postId: string) {
+    return this.http.put<Post>(`/api/likes/${postId}`, {})
   }
 
-  editPost(){
-    //Only for Owner
-    //TODO:
-    //PUT REQUEST
-    ///themes/:themeId/posts/:postId
+  editPost(themeId: string, postId: string, postText: string) {
+    return this.http.put(`/api/themes/${themeId}/posts/${postId}`, { postText })
   }
 
-  deletePost(){
-    //Only for Owner
-    //TODO:
-    //DELETE REQUEST
-    ///themes/:themeId/posts/:postId
+  deletePost(themeId: string, postId: string) {
+    return this.http.delete(`/api/themes/${themeId}/posts/${postId}`, {})
   }
 }
 

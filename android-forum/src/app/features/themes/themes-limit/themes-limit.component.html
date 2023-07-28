@@ -32,7 +32,7 @@
                         <ul class="w-96" *ngFor="let theme of themesLimitList">
 
                             <p class="mb-1 text-neutral-400 dark:text-neutral-300">Date:
-                                <time>{{theme.created_at}}</time>
+                                <time>{{theme.created_at | elapsedTime }}</time>
                             </p>
 
                             <li class="mb-6 text-gray-900  text-xl  dark:text-neutral-300 font-bold">

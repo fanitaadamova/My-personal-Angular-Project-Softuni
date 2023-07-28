@@ -44,9 +44,9 @@
     margin-top: 0.7rem;
   }
   
-  .subscribers {
+  .links {
     text-align: right;
-    flex-basis: 25%;
+    flex-basis: 100%;
   }
   
   .subscribers button {
@@ -148,6 +148,11 @@
     background-color: #ffffff;
     border: none;
     cursor: pointer;
+  }
+
+  .fa {
+    border: none;
+    cursor: pointer;   
   }
   
   .footer p {

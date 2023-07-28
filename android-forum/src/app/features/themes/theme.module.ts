@@ -8,6 +8,7 @@ import { ThemeRoutingModule } from './theme-routing.module';
 import { ThemesLimitComponent } from './themes-limit/themes-limit.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { PostEditComponent } from './post-edit/post-edit.component';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ThemeDetailsComponent,
     ThemeAddComponent,
     ThemesAllComponent,
-    ThemesLimitComponent
+    ThemesLimitComponent,
+    PostEditComponent
   ],
   imports: [
     ThemeRoutingModule,

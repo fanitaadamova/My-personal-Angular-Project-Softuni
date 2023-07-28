@@ -23,7 +23,7 @@
         </span>
         <h1 class="text-3xl font-bold">{{theme.themeName}}</h1>
 
-        <p class=" mr-6 h-4">Date: {{theme.created_at}}</p>
+        <p class=" mr-6 h-4">Created: {{theme.created_at | elapsedTimeWithHours}}</p>
         <p class="text-sm text-gray-600">
           Comments: {{theme.posts.length}}</p>
         <a rel="noopener noreferrer" [routerLink]="theme._id"
