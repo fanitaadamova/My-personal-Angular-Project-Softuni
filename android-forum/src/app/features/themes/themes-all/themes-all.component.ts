@@ -33,7 +33,8 @@ export class ThemesAllComponent implements OnInit, OnDestroy {
         this.isLoading = false;
       },
       error: (err) => {
-       this.errMessage = err.error.message
+       this.errMessage = err.error.message;
+       this.isLoading = false;
       },
     });
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit , OnDestroy} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { Title } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './theme-add.component.html',
   styleUrls: ['./theme-add.component.scss']
 })
+
 export class ThemeAddComponent implements OnInit, OnDestroy {
   theme: Theme | undefined;
   subscription!: Subscription;
@@ -26,21 +27,18 @@ export class ThemeAddComponent implements OnInit, OnDestroy {
   }
 
   addNewTheme(form: NgForm): void {
+
     if (form.invalid) {
-      return;     
+      return;
     }
 
-    console.log(form.value);
-    const {themeName, postText } = form.value;
-    console.log(themeName, postText);
-    
-    //this.isLoading = true;
-    
-   this.subscription = this.apiService.addNewTheme(themeName, postText).subscribe({
-    next: () => {
-      this.router.navigate(["/themes"]);
-    },
-    error: (err) => this.errMessage = err.error.message
+    const { themeName, postText } = form.value;
+
+    this.subscription = this.apiService.addNewTheme(themeName, postText).subscribe({
+      next: () => {
+        this.router.navigate(["/themes"]);
+      },
+      error: (err) => this.errMessage = err.error.message
     })
   }
 

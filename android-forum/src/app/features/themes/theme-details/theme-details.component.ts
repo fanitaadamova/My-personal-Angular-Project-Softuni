@@ -21,10 +21,8 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
   likes$!: Observable<number>;
   post: Post | undefined;
   subscribe$!: Subscription;
- // isEditMode = false;
   errMessage!: string;
   currentPostText!: string;
-
 
   constructor(
     private titlePage: Title,
@@ -56,25 +54,6 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
     })
   }
 
-  /*
-  editPost(postId: string, postText: string): void { 
-    this.isEditMode = true;
-    this.currentPostText = postText;   
-    console.log(postText);
-  }
-  */
-
-
-  saveComment(form: NgForm){
-    form.setValue(
-      {
-         
-        postText: this.currentPostText
-      }
-
-    )
-
-  }
 
 
   deletePost(postId: string): void {
@@ -82,13 +61,10 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
   
     this.subscribe$ = this.apiService.deletePost(themeId, postId).subscribe({
       next: () => {
-        console.log("succesfully deleted post");
-
         this.getThemeWithDetails();
       },
       error: (err) => this.errMessage = err.error.message
     })
-
   }
 
 

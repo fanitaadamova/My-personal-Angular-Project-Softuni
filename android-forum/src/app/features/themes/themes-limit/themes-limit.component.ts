@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 
 
@@ -14,21 +15,28 @@ import { Theme } from 'src/app/types/theme';
 export class ThemesLimitComponent implements OnInit {
   themesLimitList: Theme[] = [];
   isLoading: boolean = true;
+  errMessage!: string;
+  subscription!: Subscription;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getLastThemes(3).subscribe({
+    this.subscription = this.apiService.getLastThemes(3).subscribe({
       next: (themes) => {
         this.themesLimitList = themes;
         this.isLoading = false;
       },
       error: (err) => {
+        this.errMessage = err.error.message;
         this.isLoading = false;
-        console.log(`Error: ${err}`);
       },
     });
   }
 
 
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }

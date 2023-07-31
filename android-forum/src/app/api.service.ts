@@ -31,11 +31,6 @@ export class ApiService {
     return this.http.post<Theme>('/api/themes', { themeName, postText })
   }
 
-//Chech if it work - set back-en method
-  getPost(postId: string) {
-    return this.http.get<Post>(`/api/posts/${postId}`);
-  }
-
   postComment(postText: string, themeId: string) {
     return this.http.post<Post>(`/api/themes/${themeId}`, { postText })
   }
@@ -45,13 +40,23 @@ export class ApiService {
     return this.http.put<Post>(`/api/likes/${postId}`, {})
   }
 
-  editPost(themeId: string, postId: string, postText: string) {
+  updatePost(themeId: string, postId: string, postText: string) {
     return this.http.put(`/api/themes/${themeId}/posts/${postId}`, { postText })
   }
 
   deletePost(themeId: string, postId: string) {
     return this.http.delete(`/api/themes/${themeId}/posts/${postId}`, {})
   }
+
+
+  getPosts() {
+    const { apiUrl } = environment;
+    return this.http.get<Post[]>(`${apiUrl}/posts`);
+  }
+
+
+
+
 }
 
 
