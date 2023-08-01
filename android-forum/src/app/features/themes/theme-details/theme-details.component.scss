@@ -12,10 +12,9 @@
   .theme-content {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
   }
   
-  /* theme title  */
   
   /* theme title  */
   
@@ -30,9 +29,7 @@
     margin-top: 1em;
   }
   
-  .theme-title {
-    padding: 0;
-  }
+  
   
   .theme-name {
     width: 100%;
@@ -49,22 +46,7 @@
     flex-basis: 100%;
   }
   
-  .subscribers button {
-    padding: 0.2rem 0.5rem;
-    border: none;
-    border-radius: 0.3rem;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .subscribe {
-    background-color: green;
-  }
-  
-  .unsubscribe {
-    background-color: red;
-  }
+
   
   .theme-title {
     width: 100%;
@@ -158,15 +140,16 @@
   .footer p {
     padding-left: 0.5em;
   }
-  
+    /* 
   .footer .fa.fa-thumbs-up {
     color: green;
   }
   
   .footer .fa.fa-thumbs-down {
-    color: red;
+    color: rgb(171, 168, 168);
+    border: #060606;
   }
-  
+  */
   /* answer-comment */
   
   .answer-comment {
@@ -213,9 +196,7 @@
     min-width: 100%;
   }
 
-
   p.error {
-    text-align: left;
     border-radius: 0.3em;
     color: red;
     padding-top: 0;

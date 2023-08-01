@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 import { UserService } from 'src/app/features/user/user.serves';
+import { DeleteService } from 'src/app/shared/popup/delete.service';
 import { Post } from 'src/app/types/post';
 import { Theme } from 'src/app/types/theme';
 
@@ -28,6 +29,7 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
     private titlePage: Title,
     private apiService: ApiService,
     private userService: UserService,
+    private deleteService: DeleteService,
     private activatedRoute: ActivatedRoute,
     private router: Router) { }
 
@@ -58,13 +60,20 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
 
   deletePost(postId: string): void {
     const themeId = this.activatedRoute.snapshot.params['themeId'];
-  
-    this.subscribe$ = this.apiService.deletePost(themeId, postId).subscribe({
-      next: () => {
-        this.getThemeWithDetails();
-      },
-      error: (err) => this.errMessage = err.error.message
+    const msg = 'Are you sure you want to delete this post?';
+
+    this.subscribe$ = this.deleteService.conform(msg).subscribe((hasComformed: boolean) => {
+      if (hasComformed) {
+        this.subscribe$ = this.apiService.deletePost(themeId, postId).subscribe({
+          next: () => {
+            this.getThemeWithDetails();
+          },
+          error: (err) => this.errMessage = err.error.message
+        })
+
+      }
     })
+
   }
 
 

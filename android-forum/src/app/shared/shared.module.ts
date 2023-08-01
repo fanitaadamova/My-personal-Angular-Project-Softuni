@@ -6,7 +6,6 @@ import { ElapsedTimeWithHoursPipe } from './pipes/elapsed-time-with-hours.pipe';
 import { ElapsedTimeBeforeNowPipe } from './pipes/elapsed-time-before-now.pipe';
 
 
-
 @NgModule({
   declarations: [
     LoaderComponent,
@@ -15,7 +14,7 @@ import { ElapsedTimeBeforeNowPipe } from './pipes/elapsed-time-before-now.pipe';
     ElapsedTimeBeforeNowPipe
   ],
   imports: [
-    CommonModule
+    CommonModule    
   ],
   exports: [
     LoaderComponent,

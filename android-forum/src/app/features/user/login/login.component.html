@@ -29,7 +29,11 @@
                       disabled:shadow-none
                       invalid:border-white-500 invalid:text-red-600
                       focus:invalid:border-red-500 focus:invalid:ring-red-500" type="email" name="email" id="email"
-                      placeholder="fanita@gmail.com" inputEmail ngModel #inputEmail="ngModel" required minlength="9"
+                      placeholder="fanita@gmail.com" 
+                      inputEmail 
+                      ngModel 
+                      #inputEmail="ngModel" 
+                      required minlength="9"
                       [appEmail]="appEmailDomains" />
                     <label for="email" class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] 
                       truncate pt-[0.37rem] leading-[1.6] text-neutral-400 transition-all duration-200 
