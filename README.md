@@ -54,12 +54,12 @@ Search theme - case insensitive
 ## Theme deatails page
 The page therea are two parts - public and private(for logged in users) parts.
 1. Public part: 
- - all user can see post text and numbers ot likes, but not to likes, edit, delete post or to add new comment. 
+ - all users can see post text, date of create, poster user and numbers ot likes, but not to like, edit, delete post or to add new comment. 
 
 2. Private parts:
    - Can post a new comment.
    - Can like every comment. If already liked some post, see the message "Already liked"
-   - If user is owner of post see buttons for edit and delete post.
+   - If the user is owner of post see buttons for edit and delete post.
 
 
 ## Used additional lybraries 
