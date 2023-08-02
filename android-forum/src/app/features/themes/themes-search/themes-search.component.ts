@@ -30,6 +30,7 @@ export class ThemesSearchComponent {
     this.subscription = this.apiService.getThemes().subscribe({
       next: (themes) => {
         this.themesList = themes;
+        this.searchThemesList = themes
         this.isLoading = false;
       },
       error: (err) => {
@@ -40,11 +41,11 @@ export class ThemesSearchComponent {
   }
 
   searchThemes(form: NgForm): void {
-    if(form.invalid){
-      return
-    }
     const { search } = form.value;
-    this.searchThemesList = this.themesList.filter(theme => theme.themeName.toLowerCase().includes(search.toLowerCase()))
+    this.searchThemesList = this.themesList
+      .filter(theme => theme.themeName
+        .toLowerCase()
+        .includes(search.toLowerCase()))
   }
 
 
