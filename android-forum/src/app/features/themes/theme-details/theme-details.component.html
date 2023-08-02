@@ -35,19 +35,19 @@
             <!-- Delete Comment Link and action -->
             <div class="links">
                 <i *ngIf="post.userId._id == userId" href="javascript:void(0)" (click)="deletePost(post._id)"
-                    style=" font-size: 1.5em; color: red;" class="fa fa-trash"></i>
+                   style=" font-size: 1.5em; color: red;" class="fa fa-trash"></i>
             </div>
             <div class="footer">
                 <link *ngIf="isLogged" rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <i class="fa fa-thumbs-up"  style="color: #1c7656;"  *ngIf="!post.likes.includes(userId)" (click)="likePost(post._id)"></i>
-                <i class="fa fa-thumbs-up"  style="color: rgb(226, 223, 218) " *ngIf="post.likes.includes(userId)"> Already liked</i>
+                <i class="fa fa-thumbs-up"  style="color: rgb(226, 223, 218)" *ngIf="post.likes.includes(userId)"> Already liked</i>
                 <p><span>{{post.likes.length}}</span> likes</p>
             </div>
         </div>
 
         <div class="answer-comment" *ngIf="isLogged">
-            <p><span>Current User</span> comment:</p>
+            <p><span>{{username}} </span>add a comment:</p>
             <div class="answer">
                 <!-- Comment Form -->
                 <form #form="ngForm" (ngSubmit)="postComment(form)">
@@ -82,3 +82,5 @@
     </div>
 
 </div>
+
+

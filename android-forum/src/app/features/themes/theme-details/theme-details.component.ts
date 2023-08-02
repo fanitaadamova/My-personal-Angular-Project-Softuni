@@ -39,6 +39,10 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
 
   }
 
+  get username(): string {
+    return this.userService.user?.username || '';
+  }
+  
   get userId(): string {
     return this.userService.user?._id || '';
   }
