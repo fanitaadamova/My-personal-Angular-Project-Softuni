@@ -27,10 +27,12 @@ Valid inputs in this case are:
  -	Repeat password and password must be matched.
 
 ## USERS
-  - georgi@abv.bg      pass: 123123;
-  - yavkata@abv.bg     pass: 123456;
-  - pamela@gmail.com   pass: 12345;
-  - janee@gmail.com    pass: 12345;
+  - georgi@abv.bg        pass: 123123;
+  - yavkata@abv.bg       pass: 123456;
+  - pamela@gmail.com     pass: 12345;
+  - janee@gmail.com      pass: 12345;
+  - f.adamova@gmail.com  pass: 123123;
+
 
 ## Add new theme page
 Page only for logged in users
@@ -45,7 +47,10 @@ The "Post" button should be disabled if the inputs are NOT valid.
 
 ## Profile page
 Page only for logged in users
-Profile page contains personal account information for user and list with own created themes.
+Profile page contains:
+ -  personal account information for user;
+ -  list with own created themes with link to the details of theme;
+ -  list with all posted comments with link to the details of theme.
 
 ## Search page
 Public page for all users.

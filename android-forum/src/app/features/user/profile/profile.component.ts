@@ -5,6 +5,8 @@ import { User } from 'src/app/types/user';
 import { Theme } from 'src/app/types/theme';
 import { ApiService } from 'src/app/api.service';
 import { Subscription } from 'rxjs';
+import { Post } from 'src/app/types/post';
+import { UserId } from 'src/app/types/user-id';
 
 @Component({
   selector: 'app-profile',
@@ -13,9 +15,12 @@ import { Subscription } from 'rxjs';
 })
 export class ProfileComponent implements OnInit, OnDestroy {
   user: User | undefined;
-  userId!: string;
+  userId!: string | UserId;
   themesList: Theme[] = [];
   ownThemeList: Theme[] = [];
+  postList: Post[] = [];
+  ownPostList: Post[] = [];
+  errMessage!: string;
   subscribe$!: Subscription;
 
   constructor(
@@ -42,9 +47,19 @@ export class ProfileComponent implements OnInit, OnDestroy {
       },
       error: (err) => {
         //this.isLoading = false;
-        console.log(`Error: ${err}`);
+        this.errMessage = err.error.message
+       
       },
     });
+
+    this.subscribe$ = this.apiService.getPosts().subscribe({
+      next: (posts) => {
+        this.ownPostList = posts.filter((post) => post.userId._id == this.userId);
+        
+      },
+      error: (err) => this.errMessage = err.error.message
+    })
+
   }
 
   ngOnDestroy(): void {
