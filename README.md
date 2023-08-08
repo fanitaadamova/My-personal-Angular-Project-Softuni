@@ -15,7 +15,8 @@ image.png
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/5df7ba06-9a92-42b7-a2f3-edd41fc2d7a0)
 
 ## Every page contains footer
-![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/9243b62d-b957-48af-b449-0ea73ab508da)
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/ba643b0b-6470-45d4-819e-6e4e5e37cd9d)
+
 
 
 
