@@ -4,6 +4,13 @@ This is a WEB application using Angular - discussion forum for issues with Andro
 Uses a Rest-api server with Node.js and MongoDB.
 
 
+## Every page contains navigation
+ - NON logged in user 
+image.png
+ - logged in user 
+ image.png
+
+
 ## Home page
 Public page for all users.
 Home page - showes latest 3 created themes. 
