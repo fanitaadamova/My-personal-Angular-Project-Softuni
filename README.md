@@ -69,7 +69,8 @@ Valid data in this case is:
  - 	Post text - should be at least 8 characters long
 The "Post Theme" button should be disabled if the inputs are NOT valid.
 
-![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/b4eeb8f0-481e-4be8-89e9-44a627b47a66)
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/824d52a4-1ce8-4ca7-9440-b760d2c13120)
+
 
 
 
