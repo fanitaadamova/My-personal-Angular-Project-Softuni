@@ -3,6 +3,7 @@
 This is a WEB application using Angular - discussion forum for issues with Android OS Devices.
 Uses a Rest-api server with Node.js and MongoDB.
 
+# Deploy - https://main--android-forum.netlify.app/home
 
 ## Every page contains navigation
  - NON logged in user
