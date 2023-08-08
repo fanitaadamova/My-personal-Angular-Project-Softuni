@@ -15,6 +15,7 @@ image.png
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/5df7ba06-9a92-42b7-a2f3-edd41fc2d7a0)
 
 ## Every page contains footer
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/9243b62d-b957-48af-b449-0ea73ab508da)
 
 
 
@@ -22,6 +23,9 @@ image.png
 Public page for all users.
 Home page - showes latest 3 created themes. 
 There is a button with link to All Themes page.
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/1a670eac-befa-4b1c-bb28-4dcb47e63d69)
+
 
 
 ## Login page
@@ -31,6 +35,9 @@ Valid credentials in this case are:
  -	Email address must have at least 9 symbols. The valid domain name - "bg" or "com".
  -	Password should be at least 5 symbols as well
 
+   ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/a17ec0c8-9fe3-4f4b-8717-94b51283bc2c)
+
+
 ## Register page
 
 The register form expects as input: username, email, password and repeat passwor.
@@ -39,6 +46,8 @@ Valid inputs in this case are:
  - 	Email address must have at least 9 symbols. The valid domain name - "bg" or "com".
  - 	Password should be at least 5 symbols as well
  -	Repeat password and password must be matched.
+
+   
 
 ## USERS
   - georgi@abv.bg        pass: 123123;
