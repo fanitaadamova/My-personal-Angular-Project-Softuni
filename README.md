@@ -115,6 +115,14 @@ The page therea are two parts - public and private(for logged in users) parts.
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/96005a45-722e-4efa-8b64-d3fa7ec8c747)
 
 
+### Theme deatails - delete post
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/f2224863-2f3f-4928-8468-c57e2a1c5653)
+
+
+### Theme deatails - edit post
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/f08618d0-2ed7-4c41-9550-3e6552ea1e39)
 
 
 ## Used additional lybraries 
