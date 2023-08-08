@@ -1,78 +1,66 @@
 <div>
 
-    <!--
+  <!--
    
       <div *ngIf="isLoading">
         <app-loader />
       </div>
     -->
-   
-   
-   <div 
-     class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-     <h2 class="mb-4 text-2xl font-bold">
-       Edit post
-     </h2>
-   
-     <form #form="ngForm" (ngSubmit)="updatePost(form)">
-      
-   
-   
-       <!--Message textarea-->
-       <div class="relative mb-6" data-te-input-wrapper-init>
-         <textarea 
-         class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+
+
+  <div class="block max-w-md min-h-screen min-w-screen rounded-lg bg-white p-6  dark:bg-neutral-700">
+    <h2 class="mb-4 text-2xl font-bold">
+      Edit post
+    </h2>
+
+    <form #form="ngForm" (ngSubmit)="updatePost(form)">
+
+
+
+      <!--Message textarea-->
+      <div class="relative mb-6" data-te-input-wrapper-init>
+        <textarea class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
          focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500
          disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 
          disabled:shadow-none
          invalid:border-white-500 invalid:text-red-600
-         focus:invalid:border-red-500 focus:invalid:ring-red-500"
-            placeholder="Post *" 
-            type="text" 
-            name="postText" 
-            id="postText" 
-            #textAreaInput="ngModel" 
-            [(ngModel)]="postText" 
-            required
-            minlength="10"
-           
-           rows="10"></textarea>
-         <label for="postText" 
-         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] 
+         focus:invalid:border-red-500 focus:invalid:ring-red-500" placeholder="Post *" type="text" name="postText"
+          id="postText" #textAreaInput="ngModel" [(ngModel)]="postText" required minlength="10" rows="10"></textarea>
+        <label for="postText" class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] 
            text-neutral-500  transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] 
            peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
            peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none 
            dark:text-neutral-200 dark:peer-focus:text-primary">
-         </label>
-         <!--Error Title Container-->
-     <ng-container *ngIf="textAreaInput.touched">
-      <p class="error" *ngIf="textAreaInput.errors?.['required']">
-        Post is required!
-      </p>
-      <p class="error" *ngIf="textAreaInput.errors?.['minlength']">
-        Post must be at least 10 characters!
-      </p>
-     </ng-container>
-   
-       </div>
-    
-       <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-       <!--Submit button-->
-       <div class="update-theme-buttons">
-         <button [disabled]="form.invalid"
-           class="mb-3 inline-block  rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
-           data-te-ripple-init data-te-ripple-color="light"
-           style="background: linear-gradient(to right, #36b5d8, #36dda3, #100f10);">
-           Save Post
-         </button>
-   
-              <!-- SERVER ERROR - back-end error -->
-              <div class="text-center block mb-2 text-sm font-medium text-red-500  dark:text-white"
-              *ngIf="errMessage">{{ errMessage }} <i class="fa-solid fa-xmark"></i>
-            </div>
-   
-       </div>
-     </form>
-   </div>
-   
+        </label>
+        <!--Error Title Container-->
+        <ng-container *ngIf="textAreaInput.touched">
+          <p class="error" *ngIf="textAreaInput.errors?.['required']">
+            Post is required!
+          </p>
+          <p class="error" *ngIf="textAreaInput.errors?.['minlength']">
+            Post must be at least 10 characters!
+          </p>
+        </ng-container>
+
+      </div>
+
+      <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+      <!--Submit button-->
+      <div class="update-theme-buttons">
+        <button [disabled]="form.invalid"
+          class="mb-3 inline-block  rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+          data-te-ripple-init data-te-ripple-color="light"
+          style="background: linear-gradient(to right, #36b5d8, #36dda3, #100f10);">
+          Save Post
+        </button>
+
+        <!-- SERVER ERROR - back-end error -->
+        <div class="text-center block mb-2 text-sm font-medium text-red-500  dark:text-white" *ngIf="errMessage">{{
+          errMessage }} <i class="fa-solid fa-xmark"></i>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
 </div>

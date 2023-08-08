@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 import { UserService } from 'src/app/features/user/user.serves';
 import { DeleteService } from 'src/app/shared/popup/delete.service';
@@ -18,8 +18,6 @@ import { Theme } from 'src/app/types/theme';
 
 export class ThemeDetailsComponent implements OnInit, OnDestroy {
   theme: Theme | undefined;
-  canLike$!: Observable<number>;
-  likes$!: Observable<number>;
   post: Post | undefined;
   subscribe$!: Subscription;
   errMessage!: string;
@@ -36,13 +34,12 @@ export class ThemeDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.titlePage.setTitle('Theme details page');
     this.getThemeWithDetails();
-
   }
 
   get username(): string {
     return this.userService.user?.username || '';
   }
-  
+
   get userId(): string {
     return this.userService.user?._id || '';
   }

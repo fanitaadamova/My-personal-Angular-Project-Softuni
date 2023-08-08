@@ -4,7 +4,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <div>
         <hr class="my-8 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-        <!--Acount information-->
+        <!--Acount information section-->
         <section>
             <div class="flex flex-col max-w-md bg-white px-8 py-6 rounded-xl space-y-5 items-center">
 
@@ -50,92 +50,95 @@
         </section>
 
 
-        <!--Created themes information-->
-        <div class="dark:bg-gray-800 dark:text-gray-50">
-            <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-            <h2 class="mb-4 text-4xl font-bold">
-                <i class="fab fa-android mr-3"></i>
-                <i class="fab fa-android mr-3"></i>
-                Created Themes
-                <i class="fab fa-android ml-3"></i>
-                <i class="fab fa-android ml-3"></i>
-            </h2>
-            <div class="container grid grid-cols-12 mx-auto">
+        <!--Created themes information section-->
+        <section>
+            <div class="dark:bg-gray-800 dark:text-gray-50">
+                <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+                <h2 class="mb-4 text-4xl font-bold">
+                    <i class="fab fa-android mr-3"></i>
 
-                <div *ngFor="let theme of ownThemeList"
-                    class="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 divide-gray-700">
-                    <!--Card Theme-->
-                    <div *ngIf="ownThemeList.length" class="pt-6 pb-4 space-y-2">
-                        <h1 class="text-3xl font-bold">{{theme.themeName}}</h1>
-                        <p class=" mr-6 h-4">Date: {{theme.created_at}}</p>
-                        <p class="text-sm text-gray-600">
-                            Comments: {{theme.posts.length}}</p>
-                        <a rel="noopener noreferrer" routerLink="/themes/{{theme._id}}"
-                            class="inline-flex items-center py-2 space-x-2 text-sm dark:text-violet-400">
-                            <span>Read more</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                class="w-4 h-4">
-                                <path fill-rule="evenodd"
-                                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                    Created Themes
 
-                <div
-                    class="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-5 divide-gray-700 text-left  items-lefet">
-
-                    <div *ngIf="ownThemeList.length == 0">
-                        <h1 class="text-2xl font-normal text-left">There are no posted theme!</h1>
-                        <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-
-        <!--Posted Comments information-->
-        <div class="dark:bg-gray-800 dark:text-gray-50">
-            <h2 class="mb-2 text-4xl font-bold">
-                <i class="far fa-comments mr-3"></i>
-                 Posted Comments              
                 </h2>
-            <div class="container grid grid-cols-12 mx-auto">
-                <div *ngFor="let post of ownPostList"
-                    class="flex flex-col col-span-6 p-6 divide-y lg:col-span-6 lg:p-10 divide-gray-700">
-                    <!--Card Theme-->
-                    <div *ngIf="ownPostList.length" class="pt-2 pb-4 space-y-2">
-                        <h1 class="text-1xl font-bold">{{post.text}}</h1>
+                <div class="container grid grid-cols-12 mx-auto">
 
-                        <a rel="noopener noreferrer" routerLink="/themes/{{post.themeId._id}}"
-                            class="inline-flex items-center py-2 space-x-2 text-sm dark:text-violet-400">
-                            <span>Go to theme</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                class="w-4 h-4">
-                                <path fill-rule="evenodd"
-                                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
+                    <div *ngFor="let theme of ownThemeList"
+                        class="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 divide-gray-700">
+                        <!--Card Theme-->
+                        <div *ngIf="ownThemeList.length" class="pt-6 pb-4 space-y-2">
+                            <h1 class="text-3xl font-bold">{{theme.themeName}}</h1>
+                            <p class=" mr-6 h-4">Date: {{theme.created_at}}</p>
+                            <p class="text-sm text-gray-600">
+                                Comments: {{theme.posts.length}}</p>
+                            <a rel="noopener noreferrer" routerLink="/themes/{{theme._id}}"
+                                class="inline-flex items-center py-2 space-x-2 text-sm dark:text-violet-400">
+                                <span>Read more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path fill-rule="evenodd"
+                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <div
-                    class="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-5 divide-gray-700 text-left  items-lefet">
+                    <div
+                        class="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-5 divide-gray-700 text-left  items-lefet">
 
-                    <div *ngIf="ownPostList.length == 0">
-                        <h1 class="text-2xl font-normal text-left">There are no posted theme!</h1>
-                        <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+                        <div *ngIf="ownThemeList.length == 0">
+                            <h1 class="text-2xl font-normal text-left">There are no posted theme!</h1>
+                            <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+                        </div>
                     </div>
+
                 </div>
 
             </div>
+            <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+        </section>
 
-        </div>
 
+        <!--Posted Comments information section-->
+        <section>
+            <div class="dark:bg-gray-800 dark:text-gray-50">
+                <h2 class="mb-2 text-4xl font-bold">
+                    <i class="far fa-comments mr-3"></i>
+                    Posted Comments
+                </h2>
+                <div class="container grid grid-cols-12 mx-auto">
+                    <div *ngFor="let post of ownPostList"
+                        class="flex flex-col col-span-6 p-6 divide-y lg:col-span-6 lg:p-10 divide-gray-700">
+                        <!--Card Theme-->
+                        <div *ngIf="ownPostList.length" class="pt-2 pb-4 space-y-2">
+                            <h1 class="text-1xl font-bold">{{post.text}}</h1>
+
+                            <a rel="noopener noreferrer" routerLink="/themes/{{post.themeId._id}}"
+                                class="inline-flex items-center py-2 space-x-2 text-sm dark:text-violet-400">
+                                <span>Go to theme</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path fill-rule="evenodd"
+                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-5 divide-gray-700 text-left  items-lefet">
+
+                        <div *ngIf="ownPostList.length == 0">
+                            <h1 class="text-2xl font-normal text-left">There are no posted comment!</h1>
+                            <hr class="my-10 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
 
     </div>
 
