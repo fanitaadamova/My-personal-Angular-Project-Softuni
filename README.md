@@ -65,7 +65,10 @@ The new theme form expects as input: theme name, post text.
 Valid data in this case is:
  -	Theme name - should be at least 4 characters
  - 	Post text - should be at least 8 characters long
-The "Post" button should be disabled if the inputs are NOT valid.
+The "Post Theme" button should be disabled if the inputs are NOT valid.
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/b4eeb8f0-481e-4be8-89e9-44a627b47a66)
+
 
 
 ## Profile page
@@ -74,6 +77,9 @@ Profile page contains:
  -  personal account information for user;
  -  list with own created themes with link to the details of theme;
  -  list with all posted comments with link to the details of theme.
+
+   ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/4f717344-d5a8-41a9-945d-48958dc0b972)
+
 
 ## Search page
 Public page for all users.
@@ -84,10 +90,18 @@ The page therea are two parts - public and private(for logged in users) parts.
 1. Public part: 
  - all users can see post text, date of create, poster user and numbers ot likes, but not to like, edit, delete post or to add new comment. 
 
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/edd0f7d0-c3a8-408f-aac5-f448596579c6)
+
+
 2. Private parts:
    - Can post a new comment.
    - Can like every comment. If already liked some post, see the message "Already liked"
    - If the user is owner of post see buttons for edit and delete post.
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/085aba56-5355-42d9-9f10-4be0bf734099)
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/b9e66354-da2d-4a67-a3b8-d10d1ad0e695)
+
 
 
 ## Used additional lybraries 
