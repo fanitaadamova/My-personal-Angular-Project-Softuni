@@ -88,6 +88,14 @@ Profile page contains:
 Public page for all users.
 Search theme - case insensitive 
 
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/bc91cad2-8d9b-4254-83cf-09c74fdc47d0)
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/e9e9fad6-7df4-4ad3-96d0-d4738b545647)
+
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/0a654fe6-916c-43e8-9740-f88da9436652)
+
+
+
 ## Theme deatails page
 The page therea are two parts - public and private(for logged in users) parts.
 1. Public part: 
