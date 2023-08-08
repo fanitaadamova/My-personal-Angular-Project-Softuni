@@ -5,11 +5,15 @@ Uses a Rest-api server with Node.js and MongoDB.
 
 
 ## Every page contains navigation
- - NON logged in user 
+ - NON logged in user
+  ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/b3b6f0c1-0a6b-4c41-9f91-ac01048d4ca0)
+
+
 image.png
  - logged in user 
  image.png
-![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/a81689b0-9fd4-4ff2-8001-a0965ec1ed86)
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/5df7ba06-9a92-42b7-a2f3-edd41fc2d7a0)
+
 
 
 
