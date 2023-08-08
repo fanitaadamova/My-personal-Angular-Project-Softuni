@@ -3,7 +3,8 @@ const env = process.env.NODE_ENV || 'development';
 const config = {
     development: {
         port: process.env.PORT || 3000,
-        dbURL: 'mongodb://127.0.0.1:27017/androidForum',
+        //dbURL: 'mongodb://127.0.0.1:27017/androidForum',
+        dbURL: 'mongodb+srv://qwerty789456123:lL7SQXJNhyd7hx7c@cluster0.etqghoy.mongodb.net/?retryWrites=true&w=majority',
         origin: ['http://localhost:5555', 'http://localhost:4200']
     },
     production: {
