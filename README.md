@@ -123,7 +123,8 @@ The page therea are two parts - public and private(for logged in users) parts.
 
 ### Theme deatails - edit post
 
-![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/f08618d0-2ed7-4c41-9550-3e6552ea1e39)
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/15798f91-b80b-42c3-b6aa-fb7cadfeaf7f)
+
 
 
 ## Used additional lybraries 
