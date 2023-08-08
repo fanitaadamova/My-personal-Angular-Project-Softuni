@@ -104,7 +104,8 @@ The page therea are two parts - public and private(for logged in users) parts.
 
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/085aba56-5355-42d9-9f10-4be0bf734099)
 
-![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/b9e66354-da2d-4a67-a3b8-d10d1ad0e695)
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/96005a45-722e-4efa-8b64-d3fa7ec8c747)
+
 
 
 
