@@ -15,7 +15,8 @@ dbConnector()
     require('./config/express')(app);
 
     app.use(cors({
-      origin: config.origin,
+      // origin: config.origin,
+      origin: true,
       credentials: true
     }));
 
