@@ -9,6 +9,8 @@ Uses a Rest-api server with Node.js and MongoDB.
 image.png
  - logged in user 
  image.png
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/a81689b0-9fd4-4ff2-8001-a0965ec1ed86)
+
 
 
 ## Home page
