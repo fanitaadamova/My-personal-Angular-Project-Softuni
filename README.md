@@ -25,7 +25,7 @@ Public page for all users.
 Home page - showes latest 3 created themes. 
 There is a button with link to All Themes page.
 
-![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/1a670eac-befa-4b1c-bb28-4dcb47e63d69)
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/f8594d06-c315-4cd6-a5a4-022577908ccc)
 
 
 
