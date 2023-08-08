@@ -47,7 +47,8 @@ Valid inputs in this case are:
  - 	Password should be at least 5 symbols as well
  -	Repeat password and password must be matched.
 
-   
+   ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/537a2173-af3a-43fd-8a5e-ac1d17d03466)
+
 
 ## USERS
   - georgi@abv.bg        pass: 123123;
