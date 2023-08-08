@@ -93,7 +93,8 @@ The page therea are two parts - public and private(for logged in users) parts.
 1. Public part: 
  - all users can see post text, date of create, poster user and numbers ot likes, but not to like, edit, delete post or to add new comment. 
 
-![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/edd0f7d0-c3a8-408f-aac5-f448596579c6)
+![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/c7b34596-5e61-4f63-bee5-612227a9993c)
+
 
 
 2. Private parts:
