@@ -79,7 +79,8 @@ Profile page contains:
  -  list with own created themes with link to the details of theme;
  -  list with all posted comments with link to the details of theme.
 
-   ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/4f717344-d5a8-41a9-945d-48958dc0b972)
+  ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/b5a82980-1315-4e44-8cdc-b5f63f0a0a5a)
+
 
 
 ## Search page
