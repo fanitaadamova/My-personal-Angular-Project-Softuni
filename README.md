@@ -3,8 +3,9 @@
 This is a WEB application using Angular - discussion forum for issues with Android OS Devices.
 Uses a Rest-api server with Node.js and MongoDB.
 
-# Project DEMO - https://main--android-forum.netlify.app/home
-- I used rended.com to deploy back-end;
+## Project DEMO - https://main--android-forum.netlify.app/home
+- using Netlify for the frontend deployment and Render for the backend deployment.
+- using mongoDB Atlas to store data
 
 ## Every page contains navigation
  - NON logged in user
