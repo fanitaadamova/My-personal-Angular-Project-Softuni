@@ -1,13 +1,28 @@
 # AndroidForum
 
-This is a WEB application using Angular - discussion forum for issues with Android OS Devices.
-Uses a Rest-api server with Node.js and MongoDB.
+This is a WEB application using Angular for the frontend - discussion forum for issues with Android OS Devices.
+Used a Softuni Rest-api server with a little modification for backend (in mongoose Models and Controllers) and MongoDB for storing data.
 
-## Project DEMO - https://android-forum.netlify.app/home
-- using Netlify for the frontend deployment and Render for the backend deployment.
-- using mongoDB Atlas to store data
+## Steps for local instalation a review:
+1. Clone the repository: https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni.git
+2. Navigate to Rest-api folder:
+   - npm install (install all packeges dependances);
+   - mpm start (command to start the back-en server);
+3. Navigate to android-forum folder:
+   - npm install (install all packeges dependances);
+   - Run client Angular app:
+         ng serve --open   or  ng s
 
-## Every page contains navigation
+## Deployment
+- Project DEMO - https://android-forum.netlify.app/home
+- Link to repository with deployed version code - https://github.com/fanitaadamova/Android-forum-version-with-deploy/tree/main
+- Used:
+  - Netlify for the frontend deployment;
+  - Render for the backend deployment;
+  - MongoDB database used for application is hosted on MongoDB Cloud.
+
+## Site overview 
+### Every page contains navigation
  - NON logged in user
   ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/b3b6f0c1-0a6b-4c41-9f91-ac01048d4ca0)
 
@@ -17,13 +32,13 @@ image.png
  image.png
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/5df7ba06-9a92-42b7-a2f3-edd41fc2d7a0)
 
-## Every page contains footer
+### Every page contains footer
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/ba643b0b-6470-45d4-819e-6e4e5e37cd9d)
 
 
 
 
-## Home page
+### Home page
 Public page for all users.
 Home page - showes latest 3 created themes. 
 There is a button with link to All Themes page.
@@ -32,7 +47,7 @@ There is a button with link to All Themes page.
 
 
 
-## Login page
+### Login page
 
 The login form expects as input: email and password.
 Valid credentials in this case are:
@@ -42,7 +57,7 @@ Valid credentials in this case are:
    ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/a17ec0c8-9fe3-4f4b-8717-94b51283bc2c)
 
 
-## Register page
+### Register page
 
 The register form expects as input: username, email, password and repeat passwor.
 Valid inputs in this case are:
@@ -54,7 +69,7 @@ Valid inputs in this case are:
    ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/537a2173-af3a-43fd-8a5e-ac1d17d03466)
 
 
-## USERS
+### USERS
   - georgi@abv.bg        pass: 123123;
   - yavkata@abv.bg       pass: 123456;
   - pamela@gmail.com     pass: 12345;
@@ -62,7 +77,7 @@ Valid inputs in this case are:
   - f.adamova@gmail.com  pass: 123123;
 
 
-## Add new theme page
+### Add new theme page
 Page only for logged in users
 Every logged in user can create a new theme in forum.
 
@@ -77,7 +92,7 @@ The "Post Theme" button should be disabled if the inputs are NOT valid.
 
 
 
-## Profile page
+### Profile page
 Page only for logged in users
 Profile page contains:
  -  personal account information for user;
@@ -88,7 +103,7 @@ Profile page contains:
 
 
 
-## Search page
+### Search page
 Public page for all users.
 Search theme - case insensitive 
 
@@ -100,7 +115,7 @@ Search theme - case insensitive
 
 
 
-## Theme deatails page
+### Theme deatails page
 The page therea are two parts - public and private(for logged in users) parts.
 1. Public part: 
  - all users can see post text, date of create, poster user and numbers ot likes, but not to like, edit, delete post or to add new comment. 
@@ -109,9 +124,9 @@ The page therea are two parts - public and private(for logged in users) parts.
 
 
 
-2. Private parts:
-   - Can post a new comment.
-   - Can like every comment. If already liked some post, see the message "Already liked"
+2. Private parts - only for logged in users:
+   - Can post a new comment;
+   - Can like every comment, if already liked some post, see the message "Already liked";
    - If the user is owner of post see buttons for edit and delete post.
 
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/085aba56-5355-42d9-9f10-4be0bf734099)
@@ -119,12 +134,12 @@ The page therea are two parts - public and private(for logged in users) parts.
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/96005a45-722e-4efa-8b64-d3fa7ec8c747)
 
 
-### Theme deatails - delete post
+#### Theme deatails - delete post
 
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/f2224863-2f3f-4928-8468-c57e2a1c5653)
 
 
-### Theme deatails - edit post
+#### Theme deatails - edit post
 
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/15798f91-b80b-42c3-b6aa-fb7cadfeaf7f)
 
