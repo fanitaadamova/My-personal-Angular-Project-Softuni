@@ -1,11 +1,23 @@
 # AndroidForum
 
-This is a WEB application using Angular - discussion forum for issues with Android OS Devices.
-Uses a Rest-api server with Node.js and MongoDB.
+This is a WEB application using Angular for the frontend - discussion forum for issues with Android OS Devices.
+Used a Softuni Rest-api server with a little modification for backend (in mongoose Models and Controllers) and MongoDB for storing data.
+
+## Steps for local instalation a review:
+1. Clone the repository: https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni.git
+2. Navigate to Rest-api folder:
+   - npm install (install all packeges dependances);
+   - mpm start (command to start the back-en server);
+3. Navigate to android-forum folder
+   - npm install (install all packeges dependances);
+   - Run client Angular app:
+         ng serve --open   or  ng s
+
 
 ## Project DEMO - https://android-forum.netlify.app/home
 - using Netlify for the frontend deployment and Render for the backend deployment.
 - using mongoDB Atlas to store data
+      * Link to repository with deployed version code - https://github.com/fanitaadamova/Android-forum-version-with-deploy/tree/main
 
 ## Every page contains navigation
  - NON logged in user
