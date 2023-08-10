@@ -8,7 +8,7 @@ Used a Softuni Rest-api server with a little modification for backend (in mongoo
 2. Navigate to Rest-api folder:
    - npm install (install all packeges dependances);
    - mpm start (command to start the back-en server);
-3. Navigate to android-forum folder
+3. Navigate to android-forum folder:
    - npm install (install all packeges dependances);
    - Run client Angular app:
          ng serve --open   or  ng s
@@ -17,7 +17,8 @@ Used a Softuni Rest-api server with a little modification for backend (in mongoo
 - Project DEMO - https://android-forum.netlify.app/home
 - Link to repository with deployed version code - https://github.com/fanitaadamova/Android-forum-version-with-deploy/tree/main
 - Used:
-  - Netlify for the frontend deployment and Render for the backend deployment.
+  - Netlify for the frontend deployment;
+  - Render for the backend deployment;
   - MongoDB database used for application is hosted on MongoDB Cloud.
 
 ## Site overview 
@@ -124,8 +125,8 @@ The page therea are two parts - public and private(for logged in users) parts.
 
 
 2. Private parts - only for logged in users:
-   - Can post a new comment.
-   - Can like every comment. If already liked some post, see the message "Already liked"
+   - Can post a new comment;
+   - Can like every comment, if already liked some post, see the message "Already liked";
    - If the user is owner of post see buttons for edit and delete post.
 
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/085aba56-5355-42d9-9f10-4be0bf734099)
