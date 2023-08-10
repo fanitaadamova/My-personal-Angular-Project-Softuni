@@ -7,9 +7,10 @@ import {
     HttpInterceptor,
     HTTP_INTERCEPTORS
 } from '@angular/common/http';
-import { Observable } from "rxjs";
+import { Observable, catchError } from "rxjs";
 import { environment } from 'src/environments/environment';
 import { Router } from "@angular/router";
+import { ErrorService } from "./error/error.service";
 
 
 const { apiUrl } = environment;
@@ -18,7 +19,7 @@ const { apiUrl } = environment;
 
 export class CookieInterceptor implements HttpInterceptor {
 
-    constructor(private router: Router) { }
+    constructor(private router: Router, private errorServie: ErrorService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -29,7 +30,18 @@ export class CookieInterceptor implements HttpInterceptor {
             })
         }
         
-        return next.handle(req)
+        return next.handle(req).pipe(
+            catchError((err) => {
+              if (err.status === 401) {
+                this.router.navigate(['/login']);
+              } else {
+                this.errorServie.setError(err);
+                this.router.navigate(['/error']);
+              }
+      
+              return [err];
+            })
+          );
 
     }
 }

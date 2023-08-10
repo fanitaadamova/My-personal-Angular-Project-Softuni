@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { SharedModule } from '../shared/shared.module';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -12,10 +13,11 @@ import { SharedModule } from '../shared/shared.module';
     HeaderComponent,
     FooterComponent,
     AuthenticateComponent,
+    ErrorComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule],
   //Note: which components to be exported from this module
-  exports: [HeaderComponent, FooterComponent, AuthenticateComponent]
+  exports: [HeaderComponent, FooterComponent, AuthenticateComponent, ErrorComponent]
 
 })
 export class CoreModule { }
