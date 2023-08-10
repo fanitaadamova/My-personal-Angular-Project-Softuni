@@ -17,7 +17,7 @@ Used a Softuni Rest-api server with a little modification for backend (in mongoo
 ## Project DEMO - https://android-forum.netlify.app/home
 - using Netlify for the frontend deployment and Render for the backend deployment.
 - using mongoDB Atlas to store data
-      * Link to repository with deployed version code - https://github.com/fanitaadamova/Android-forum-version-with-deploy/tree/main
+-  * Link to repository with deployed version code - https://github.com/fanitaadamova/Android-forum-version-with-deploy/tree/main
 
 ## Every page contains navigation
  - NON logged in user
@@ -121,7 +121,7 @@ The page therea are two parts - public and private(for logged in users) parts.
 
 
 
-2. Private parts:
+2. Private parts - only for logged in users:
    - Can post a new comment.
    - Can like every comment. If already liked some post, see the message "Already liked"
    - If the user is owner of post see buttons for edit and delete post.
