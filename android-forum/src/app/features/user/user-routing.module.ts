@@ -4,15 +4,18 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthActivate } from '../../core/guards/auth.acivate';
+import { NonAuthActivated } from 'src/app/core/guards/nonAuth.activate';
 
 const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
+        canActivate: [NonAuthActivated]
     },
     {
         path: 'register',
         component: RegisterComponent,
+        canActivate: [NonAuthActivated]
     },
     {
         path: 'profile',

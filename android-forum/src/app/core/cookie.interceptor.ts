@@ -30,18 +30,20 @@ export class CookieInterceptor implements HttpInterceptor {
             })
         }
         
-        return next.handle(req).pipe(
-            catchError((err) => {
-              if (err.status === 401) {
-                this.router.navigate(['/login']);
-              } else {
-                this.errorServie.setError(err);
-                this.router.navigate(['/error']);
-              }
+        return next.handle(req)
+        // .pipe(
+        //     catchError((err) => {
+        //       if (err.status === 401) {
+        //         this.router.navigate(['/login']);
+        //       } else {
+        //         this.errorServie.setError(err);
+        //         this.router.navigate(['/error']);
+                
+        //     }
+        //     return [err];
       
-              return [err];
-            })
-          );
+        //     })
+        //   );
 
     }
 }
