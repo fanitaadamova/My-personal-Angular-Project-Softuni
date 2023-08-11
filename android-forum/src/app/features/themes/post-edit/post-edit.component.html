@@ -25,7 +25,7 @@
          disabled:shadow-none
          invalid:border-white-500 invalid:text-red-600
          focus:invalid:border-red-500 focus:invalid:ring-red-500" placeholder="Post *" type="text" name="postText"
-          id="postText" #textAreaInput="ngModel" [(ngModel)]="postText" required minlength="10" rows="10"></textarea>
+          id="postText" #textAreaInput="ngModel" [(ngModel)]="postText" required rows="10"></textarea>
         <label for="postText" class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] 
            text-neutral-500  transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] 
            peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
@@ -36,9 +36,6 @@
         <ng-container *ngIf="textAreaInput.touched">
           <p class="error" *ngIf="textAreaInput.errors?.['required']">
             Post is required!
-          </p>
-          <p class="error" *ngIf="textAreaInput.errors?.['minlength']">
-            Post must be at least 10 characters!
           </p>
         </ng-container>
 
