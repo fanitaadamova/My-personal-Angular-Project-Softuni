@@ -1,9 +1,9 @@
 # AndroidForum
 
 This is a WEB application using Angular for the frontend - discussion forum for issues with Android OS Devices.
-Used a Softuni Rest-api server with a little modification for backend (in mongoose Models and Controllers) and MongoDB for storing data.
+Used a Softuni Rest-api server for backend with a little modification (in mongoose Models and Controllers) and MongoDB for storing data.
 
-## Steps for local instalation a review:
+## Steps for local instalation and review:
 1. Clone the repository: https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni.git
 2. Navigate to Rest-api folder:
    - npm install (install all packeges dependances);
