@@ -6,11 +6,11 @@ Used a Softuni Rest-api server for backend with a little modification (in mongoo
 ## Steps for local instalation and review:
 1. Clone the repository: https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni.git
 2. Navigate to Rest-api folder:
-   - npm install (install all packeges dependances);
-   - mpm start (command to start the back-en server);
+   - npm install - command for install all packeges dependances;
+   - mpm start - command for install allcommand to start the back-en server;
 3. Navigate to android-forum folder:
-   - npm install (install all packeges dependances);
-   - Run client Angular app:
+   - npm install - command for install all install all packeges dependances;
+   - Run client Angular app - 
          ng serve --open   or  ng s
 
 ## Deployment
