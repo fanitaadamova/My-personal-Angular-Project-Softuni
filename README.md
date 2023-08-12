@@ -69,7 +69,7 @@ Valid inputs in this case are:
    ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/537a2173-af3a-43fd-8a5e-ac1d17d03466)
 
 
-### USERS
+### DEMO USERS
   - georgi@abv.bg        pass: 123123;
   - yavkata@abv.bg       pass: 123456;
   - pamela@gmail.com     pass: 12345;
