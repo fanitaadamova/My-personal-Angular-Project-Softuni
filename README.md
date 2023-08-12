@@ -117,18 +117,18 @@ Search theme - case insensitive
 
 
 ### Theme deatails page
-The page therea are two parts - public and private(for logged in users) parts.
+The page there are two parts - public and private(for logged in users).
 1. Public part: 
- - all users can see post text, date of create, poster user and numbers ot likes, but not to like, edit, delete post or to add new comment. 
-
+ - all users can see post text, date of create, poster user and numbers of likes, but not to like, edit, delete post or to add a new comment.
+   
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/c7b34596-5e61-4f63-bee5-612227a9993c)
 
 
 
-2. Private parts - only for logged in users:
-   - Can post a new comment;
-   - Can like every comment, if already liked some post, see the message "Already liked";
-   - If the user is owner of post see buttons for edit and delete post.
+2. Private part - only for logged in users:
+   - Can posts a new comment;
+   - Can likes every comment. If it already liked the post, there are a message "Already liked";
+   - If the user is owner of post, it sees edit and delete buttons.
 
 ![image](https://github.com/fanitaadamova/My-personal-Angular-Project-Softuni/assets/113979211/085aba56-5355-42d9-9f10-4be0bf734099)
 
