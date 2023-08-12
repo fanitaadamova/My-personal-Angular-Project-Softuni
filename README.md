@@ -59,7 +59,7 @@ Valid credentials in this case are:
 
 ### Register page
 
-The register form expects as input: username, email, password and repeat passwor.
+The register form expects as input: username, email, password and repeat password.
 Valid inputs in this case are:
  - 	Username should be at least 5 symbols as well.
  - 	Email address must have at least 9 symbols. The valid domain name - "bg" or "com".
@@ -75,10 +75,11 @@ Valid inputs in this case are:
   - pamela@gmail.com     pass: 12345;
   - janee@gmail.com      pass: 12345;
   - f.adamova@gmail.com  pass: 123123;
+  - sisi@abv.bg          pass: 123123;
 
 
 ### Add new theme page
-Page only for logged in users
+Page only for logged in users.
 Every logged in user can create a new theme in forum.
 
 The new theme form expects as input: theme name, post text.
