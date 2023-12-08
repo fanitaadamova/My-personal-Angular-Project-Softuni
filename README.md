@@ -1,4 +1,4 @@
-# AndroidForum
+# Android Forum
 
 This is a WEB application using Angular for the frontend - discussion forum for issues with Android OS Devices.
 Used a Softuni Rest-api server for backend with a little modification (in mongoose Models and Controllers) and MongoDB for storing data.
